@@ -1,0 +1,28 @@
+/*Login page */
+/*Signup page */
+#loginPage,
+#signupPage{
+	-fx-background-image : url("../../images/LoginBackground.jpg");
+	-fx-background-size : 100% 100%;
+}
+
+#loginButton,
+#signupButton,
+#signupConfirmBtn{
+	-fx-background-image : url("../../images/LoginButton.jpg");
+	-fx-background-size : 100% 100%;
+	-fx-background-insets: 0;
+}
+
+#cancelButton,
+#previousButton{
+	-fx-background-image : url("../../images/CancelButton.jpg");
+	-fx-background-size : 100% 100%;
+	-fx-background-insets: 0;
+}
+
+/*Home page */
+#homePage{
+	-fx-background-image : url("../../images/HomeBackground.jpg");
+	-fx-background-size : 100% 100%;
+}
