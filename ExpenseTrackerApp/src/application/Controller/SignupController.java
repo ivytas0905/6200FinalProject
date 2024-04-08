@@ -44,19 +44,29 @@ public class SignupController {
 	private SignupModel signModel = new SignupModel();
 	
 	public void signupButtonOnAction(ActionEvent event) throws IOException{
-		if (firstNameField.getText().isBlank() == false && lastNameField.getText().isBlank() == false
-			&& usernameField.getText().isBlank() == false && passwordField.getText().isBlank() == false) {
+		if (firstNameField.getText().isBlank() == false && //Check if the field is blank
+			lastNameField.getText().isBlank() == false &&
+			usernameField.getText().isBlank() == false &&
+			passwordField.getText().isBlank() == false) {
+			
 			String firstName = firstNameField.getText();
 			String lastName = lastNameField.getText();
 			String username = usernameField.getText();
 			String password = passwordField.getText();
-			boolean success = signModel.createUser(firstName, lastName, username, password);
 			
-			if(success) {
-				signupMessage.setText("Account created successfully");
+			//Check id the user name is unique
+			boolean isUsernameUnique = signModel.isUsernameUnique(username);
+			
+			if(isUsernameUnique) {
+				boolean success = signModel.createUser(firstName, lastName, username, password);
+				
+				if(success) {
+					signupMessage.setText("Account created successfully");
+				} 
 			} else {
-				signupMessage.setText("Account created unsuccessfully");
+				signupMessage.setText("Username has already exist");
 			}
+			
 		} else {
 			signupMessage.setText("Please fill the informations above");
 		}
