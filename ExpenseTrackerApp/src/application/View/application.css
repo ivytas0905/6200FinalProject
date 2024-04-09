@@ -26,3 +26,21 @@
 	-fx-background-image : url("../../images/HomeBackground.jpg");
 	-fx-background-size : 100% 100%;
 }
+
+#addButton,
+#modifyButton,
+#settingButton{
+	-fx-background-image : url("../../images/SwitchPageBtn.jpg");
+	-fx-background-size : 100% 100%;
+	-fx-background-insets: 0;
+}
+
+#removeButton{
+	-fx-background-color: transparent;
+}
+
+#logoutButton{
+	-fx-background-image : url("../../images/CancelButton.jpg");
+	-fx-background-size : 100% 100%;
+	-fx-background-insets: 0;
+}

@@ -9,22 +9,22 @@
 
 <AnchorPane fx:id="loginPage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="390.0" prefWidth="500.0" style="-fx-background-color: purple;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller.LogInController">
    <children>
-      <Label layoutX="22.0" layoutY="45.0" prefHeight="23.0" prefWidth="129.0" text="GO TO THE" textFill="WHITE">
+      <Label layoutX="16.0" layoutY="39.0" prefHeight="23.0" prefWidth="129.0" text="GO TO THE" textFill="WHITE">
          <font>
-            <Font name="System Bold Italic" size="18.0" />
+            <Font name="System Bold Italic" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="22.0" layoutY="68.0" text="MOON" textFill="WHITE">
+      <Label layoutX="16.0" layoutY="62.0" text="MOON" textFill="WHITE">
          <font>
-            <Font name="System Bold Italic" size="18.0" />
+            <Font name="System Bold Italic" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="32.0" layoutY="109.0" text="NAME" textFill="WHITE">
+      <Label layoutX="28.0" layoutY="100.0" text="NAME" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="55.0" layoutY="170.0" text="PASSWORD" textFill="WHITE">
+      <Label layoutX="55.0" layoutY="161.0" text="PASSWORD" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>

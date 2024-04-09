@@ -77,9 +77,6 @@ public class LogInController {
 		loader = new FXMLLoader(getClass().getResource("../View/Home.fxml"));
 		root = loader.load();
 		
-		HomeController homeController = loader.getController();
-		homeController.displayName(username);
-		
 		stage = (Stage) loginButton.getScene().getWindow();
 		scene = new Scene(root);
 		scene.getStylesheets().add(getClass().getResource("../View/application.css").toExternalForm());
