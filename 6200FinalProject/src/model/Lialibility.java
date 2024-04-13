@@ -1,22 +1,40 @@
 package model;
 
+import java.util.Date;
+
 public class Lialibility extends Expense {
-     double mortgagePrincipal;
-     double mortgageRate;
+     double mortgageTotal;
+     double rate;//year
+     int term;
      
      
-     public Lialibility(double mp) {
-    	 super();
-    	 mortgagePrincipal = mp;
+     
+     public Lialibility(double amount, Date date, String description,double mt) {
+    	 super(amount, userId, mt, date, description);
+    	 mortgageTotal = mt;
+    	 this.rate = rate;
+    	 this.term = term;
     	 
      }
      public double getPrincipal() {
-    	 return mortgagePrincipal;
+    	 return mortgageTotal;
      }
      public double getRate() {
-    	 return mortgageRate;
+    	 return rate;
      }
-     
-     
-
+     public int getTerm() {
+    	 return term;
+     }
+//     public double calculateMonthlyInterest() {
+//    	 return 
+//     }
+     public double calculateMonthlyPayment(double mortgageTotal, int term, double rate) {
+    	int n = term * 12;//number of payment
+    	double r = rate/12;//monthly interest rate
+        double futureValue = Math.pow(1+r,n);
+        double monthlyTotalPayment = mortgageTotal * r * futureValue/(futureValue-1);
+        return monthlyTotalPayment;
+    			 
+     }
+    
 }

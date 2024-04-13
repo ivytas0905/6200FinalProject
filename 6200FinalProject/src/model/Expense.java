@@ -2,27 +2,31 @@ package model;
 
 import java.util.Date;
 
-public class Expense {
+public class Expense extends Transaction{
    int expenseId;//multiple ids, each expense item has own expenseId
    UserProfile userId;//only one
-   String description;
+   //String description;
    String receipt;
-   Date date;
-   double amount;
+  // Date date;
+   //double amount;
    ExpenseType typeName;
    
 
-   public Expense() {
+   public Expense(double amount, UserProfile userId2, double amount2, Date date,String description) {
+	 super(amount, date, description);
 	   this.receipt = receipt;
-	   this.date = date;
+	   this.userId = userId;
+	   this.expenseId = expenseId;
+	   //this.date = date;
 	   this.amount = amount;
 	   this.typeName = typeName;
    }
    
    
-   public Expense(int expenseId, UserProfile userId) {
+  public Expense(int expenseId, UserProfile userId,double amount, Date date,String description) {
+   super(amount, date, description);
 	   this.expenseId = expenseId;
-	   this.description = description;
+	   //this.description = description;
 	   this.userId = userId;
 	   
    }
@@ -40,6 +44,20 @@ public class Expense {
    public Date getDate() {
 	   return date;
    }
+
+
+@Override
+public String getDescription() {
+	
+	return "Expense description";
+}
+
+
+@Override
+public double getAmount() {
+	// TODO Auto-generated method stub
+	return 0;
+}
 
 
 

@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Record {
 	//Expense expenseId;
@@ -45,15 +46,16 @@ public class Record {
 		this.monthlyMortgage = monthlyMortgage;
 	}
     
-//    public void addNewExpense(expenseId,userId) {
-//    	Expense e = new Expense(expenseId, userId);
-//    	expenselist.add(e);
-//    		
-//    }
-//    public void deleteExpense() {
-//    	Expense e = new Expense();
-//    	expenselist.remove(e);
-//    }
+    public Expense addNewExpense(int expenseId, UserProfile userId,double amount, Date date,String description) {
+    	Expense e = new Expense(expenseId, userId,amount, date, description);
+    	expenselist.add(e);
+    	return e;
+    		
+    }
+    public void deleteExpense(int expenseId, UserProfile userId,double amount, Date date,String description) {
+    	Expense e = new Expense(expenseId, userId,amount, date, description);
+    	expenselist.remove(e);
+    }
 //    public void generateOrderReport(ArrayList<Order> orders){
 //        ArrayList<Order> orderlist = orders;
 //        OrderSummary ordersummary ;
@@ -75,7 +77,26 @@ public class Record {
     		
     	}
     
-    
     }
-
+    public double calculateBalance(UserProfile userId, String un, String pw,Date startingOfMonth, Date endingOfMonth) {
+        UserProfile up = new UserProfile(un,pw);
+        boolean isValid = up.isValidUser("username", "password");
+    	double sum = 0;
+    	if (!isValid) {
+    		return 0;
+    	}
+    	for(Expense e: expenselist) {
+    		if(e != null && e.getDate().compareTo(startingOfMonth)>= 0 && e.getDate().compareTo(endingOfMonth)<= 0) {
+    			sum += e.getAmount();
+    		}
+    	}
+    	double incomeSum = 0;
+        for(Income i: incomelist) {
+        	if(i != null&& i.getDate().compareTo(startingOfMonth)>= 0 && i.getDate().compareTo(endingOfMonth)<= 0) {
+        		incomeSum += i.getAmount();
+        	}
+        }
+      double result = incomeSum - sum;
+      return result;
+    }
 }

@@ -1,18 +1,19 @@
 package model;
 
+import java.util.Date;
 import java.util.Random;
 
-public class Income {
+public class Income extends Transaction{
     int incomeId;
-    double amount;
-    String description;
-    String date;
+   // double amount;
+    //String description;
+    Date date;
     IncomeType typeName;
 	
-    public Income(int incomeId, double amount, String date, IncomeType typeName) {
-		
+    public Income(int incomeId, double amount, Date date, String description,IncomeType typeName) {
+		super(amount, date, description);
 		this.incomeId = incomeId;
-		this.amount = amount;
+		//this.amount = amount
 		this.date = date;
 		this.typeName = typeName;
 	}
@@ -22,7 +23,19 @@ public class Income {
     int ranId = ranIncomeId.nextInt(1000);
     return ranId;
     }
-    
 
+	@Override
+	public double getAmount() {
+		// TODO Auto-generated method stub
+		return super.amount;
+	}
+
+	@Override
+	public String getDescription() {
+		// TODO Auto-generated method stub
+		return super.description;
+	}
+    
+    
 
 }
