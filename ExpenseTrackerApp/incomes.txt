@@ -1,0 +1,12 @@
+Adam,Salary,2000,2024-04-10,Amazon
+Adam,Investment,1000,2024-04-05,Stock
+Adam,Interest,2000,2024-04-03,Bank
+Adam,Investment,500,2024-04-02,Stock
+Adam,Interest,50,2024-04-03,Saving Account
+Ray,Salary,3000,2024-04-13,NEU
+Adam,Interest,2000,2024-03-03,Bank
+Adam,Investment,500,2024-03-02,Stock
+Adam,Interest,50,2024-03-03,Saving Account
+Adam,Income,1200.0,2024-04-13,Google
+Adam,Income,100.0,2024-04-09,ETF
+Adam,Income,1000.0,2024-04-09,MSFT

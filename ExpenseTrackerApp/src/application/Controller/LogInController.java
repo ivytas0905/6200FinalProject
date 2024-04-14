@@ -6,6 +6,9 @@ import application.FXMLUtils;
 import application.Model.LoginModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -37,7 +40,9 @@ public class LogInController {
 	private LoginModel loginModel = new LoginModel();
 	
 	public void loginButtonOnAction(ActionEvent event) throws IOException{
-		if (nameTextfield.getText().isBlank() == false && passwordTextfield.getText().isBlank() == false) {
+		if (nameTextfield.getText().isBlank() == false &&
+			passwordTextfield.getText().isBlank() == false) {
+			
 			String username = nameTextfield.getText();
 			String password = passwordTextfield.getText();
 			boolean isValid = loginModel.validateLogin(username, password);
@@ -62,6 +67,20 @@ public class LogInController {
 	}
 	
 	public void switchToHome(String username) throws IOException{
-		FXMLUtils.loadFXML("View/Home.fxml", loginButton);
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("../View/Home.fxml"));
+			Parent root = loader.load();
+			
+			HomeController homeController = loader.getController();
+			homeController.displayInfo(username);
+			
+			Stage stage = (Stage) loginButton.getScene().getWindow();
+			Scene scene = new Scene(root);
+			scene.getStylesheets().add(getClass().getResource("../View/application.css").toExternalForm());
+			stage.setScene(scene);
+			stage.show();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 }

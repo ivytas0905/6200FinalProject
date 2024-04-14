@@ -54,7 +54,7 @@ public class SignupController {
 				
 				if(success) {
 					signupMessage.setText("Account created successfully");
-				} 
+				}
 			} else {
 				signupMessage.setText("Username has already exist");
 			}

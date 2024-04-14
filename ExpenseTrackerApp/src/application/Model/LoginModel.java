@@ -1,28 +1,24 @@
 package application.Model;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-
-import application.DatabaseConnection;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class LoginModel {
 	public boolean validateLogin(String username, String password) {
-		DatabaseConnection connection = new DatabaseConnection();
-		Connection connectDB = connection.getConnection();
-		try {
-			String verifyLogin = "SELECT count(1) FROM UserAccounts WHERE Username = ? AND Password = ?";
-			PreparedStatement statement = connectDB.prepareStatement(verifyLogin);
-			statement.setString(1, username);
-			statement.setString(2, password);
-			ResultSet queryResult = statement.executeQuery();
-			if(queryResult.next() && queryResult.getInt(1) == 1) {
-				return true;
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		return false;
-	}
+        try (BufferedReader reader = new BufferedReader(new FileReader("user.txt"))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] parts = line.split(",");
+                String storedUsername = parts[2];
+                String storedPassword = parts[3];
+                if (storedUsername.equals(username) && storedPassword.equals(password)) {
+                    return true;
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
 }

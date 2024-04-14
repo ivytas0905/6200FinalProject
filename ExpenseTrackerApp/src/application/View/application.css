@@ -21,15 +21,15 @@
 	-fx-background-insets: 0;
 }
 
-/*Home page */
+/* Home page */
 #homePage{
 	-fx-background-image : url("../../images/HomeBackground.jpg");
 	-fx-background-size : 100% 100%;
 }
 
-#addButton,
-#modifyButton,
-#settingButton{
+#switchToAddBtn,
+#switchToModifyBtn,
+#switchToSettingBtn{
 	-fx-background-image : url("../../images/SwitchPageBtn.jpg");
 	-fx-background-size : 100% 100%;
 	-fx-background-insets: 0;
@@ -43,4 +43,27 @@
 	-fx-background-image : url("../../images/CancelButton.jpg");
 	-fx-background-size : 100% 100%;
 	-fx-background-insets: 0;
+}
+
+/* Add page */
+#addPage{
+	-fx-background-image : url("../../images/AddBackground.jpg");
+	-fx-background-size : 100% 100%;
+}
+
+#addButton{
+	-fx-background-image : url("../../images/MoonButton.jpg");
+	-fx-background-size : 100% 100%;
+	-fx-background-insets: 0;
+}
+
+#goBackButton{
+	-fx-background-image : url("../../images/CancelButton.jpg");
+	-fx-background-size : 100% 100%;
+	-fx-background-insets: 0;
+}
+
+#expenseDataField,
+#incomeDataField{
+	
 }
