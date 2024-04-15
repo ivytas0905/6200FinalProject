@@ -39,6 +39,9 @@ public class HomeController implements Initializable{
 	private Button switchToAddBtn;
 	
 	@FXML
+	private Button switchToReportBtn;
+	
+	@FXML
 	private Button incomeButton;
 	
 	@FXML
@@ -69,14 +72,10 @@ public class HomeController implements Initializable{
 		totalExpenseField.setText("Expense: " + 0.0);		
 		totalIncomeField.setText("Income: " + 0.0);
 	}
-
-	public void displayInfo(String username) {
-		currentUserLabel.setText(username);
-	}
 	
 	public void monthChoiceBoxOnAction(ActionEvent event) throws IOException {
 		String selectMonth = monthChoiceBox.getValue();
-		int monthIndex = getMonthIndex(selectMonth) + 1;
+		int monthIndex = getMonthIndex(selectMonth) + 1; //index start from 0
 
 		incomeDataField.clear();
 		expenseDataField.clear();
@@ -129,7 +128,29 @@ public class HomeController implements Initializable{
 		}
 	}
 	
+	public void switchToReport(ActionEvent event) throws Exception{
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("../View/Report.fxml"));
+			Parent root = loader.load();
+			
+			ReportController reportController = loader.getController();
+			reportController.displayInfo(currentUserLabel.getText());
+			
+			Stage stage = (Stage) switchToReportBtn.getScene().getWindow();
+			Scene scene = new Scene(root);
+			scene.getStylesheets().add(getClass().getResource("../View/application.css").toExternalForm());
+			stage.setScene(scene);
+			stage.show();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
 	public void logoutButtonOnAction(ActionEvent event) throws IOException{
 		FXMLUtils.loadFXML("View/Login.fxml", logoutButton);
+	}
+
+	public void displayInfo(String username) {
+		currentUserLabel.setText(username);
 	}
 }

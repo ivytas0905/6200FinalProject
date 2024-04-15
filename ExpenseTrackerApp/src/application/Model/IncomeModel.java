@@ -93,4 +93,29 @@ private static final String INCOMES_FILE = "incomes.txt";
 		
 		return totalIncome;
 	}
+	
+	public static double getIncomeByCategory(String username, int month, String category) {
+		String targetUsername = username;
+		String targetCategory = category;
+		double totalIncome = 0;
+		
+		try (BufferedReader reader = new BufferedReader(new FileReader(INCOMES_FILE))){
+			String line;
+			
+			while((line = reader.readLine()) != null) {
+				String[] parts = line.split(",");
+				
+				String[] dateParts = parts[3].split("-");
+	            int expenseMonth = Integer.parseInt(dateParts[1]);
+				
+				if(parts[0].equals(targetUsername) && expenseMonth == month && parts[1].equals(targetCategory)) {
+					totalIncome += Double.parseDouble(parts[2]);
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return totalIncome;
+	}
 }

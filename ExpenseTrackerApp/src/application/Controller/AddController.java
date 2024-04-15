@@ -78,20 +78,22 @@ public class AddController implements Initializable{
 		    amountField.getText().isBlank() == false &&
 		    dateField.getValue() != null &&
 		    detailField.getText().isBlank() == false) {
+			
+			String type = typesBox.getValue();
 
 			String username = currentUserLabel.getText();
-			String type = typesBox.getValue();
+			String category = categoryBox.getValue();
 			double amount = Double.parseDouble(amountField.getText());
 			LocalDate date = dateField.getValue();
 			String detail = detailField.getText();
 			
 			switch(type) {
 				case "Income":
-					IncomeModel.createIncome(username, type, amount, date, detail);
+					IncomeModel.createIncome(username, category, amount, date, detail);
 					addMessage.setText("Income Added");
 					break;
 				case "Expense":
-					ExpenseModel.createExpense(username, type, amount, date, detail);
+					ExpenseModel.createExpense(username, category, amount, date, detail);
 					addMessage.setText("Expense Added");
 					break;
 			}

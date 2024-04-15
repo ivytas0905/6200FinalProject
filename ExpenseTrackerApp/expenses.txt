@@ -30,6 +30,6 @@ Adam,Food,20,2024-04-03,MCD
 Adam,Utilities,123,2024-03-20,Gas
 Adam,Food,50,2024-04-10,KFC
 Ray,Accommodation,2000,2024-04-13,Rent
-Adam,Expense,10.0,2024-04-13,MCD
-Adam,Expense,45.0,2024-04-12,Fenway Park
-Adam,Expense,20.0,2024-04-07,Wendy's
+Adam,Transportation,4.8,2024-04-14,MBTA
+Adam,Food,18.0,2024-04-03,Sushi
+Adam,Accommodation,1700.0,2024-04-13,Rent

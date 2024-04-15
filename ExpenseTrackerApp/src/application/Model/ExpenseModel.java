@@ -92,5 +92,30 @@ public class ExpenseModel {
 		
 		return totalExpense;
 	}
+	
+	public static double getExpenseByCategory(String username, int month, String category) {
+		String targetUsername = username;
+		String targetCategory = category;
+		double totalExpense = 0;
+		
+		try (BufferedReader reader = new BufferedReader(new FileReader(EXPENSES_FILE))){
+			String line;
+			
+			while((line = reader.readLine()) != null) {
+				String[] parts = line.split(",");
+				
+				String[] dateParts = parts[3].split("-");
+	            int expenseMonth = Integer.parseInt(dateParts[1]);
+				
+				if(parts[0].equals(targetUsername) && expenseMonth == month && parts[1].equals(targetCategory)) {
+					totalExpense += Double.parseDouble(parts[2]);
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return totalExpense;
+	}
 }
 

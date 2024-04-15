@@ -65,5 +65,11 @@
       </TextArea>
       <Button fx:id="incomeButton" layoutX="231.0" layoutY="27.0" mnemonicParsing="false" onAction="#incomeButtonOnAction" prefHeight="25.0" prefWidth="73.0" text="INCOME" />
       <Button fx:id="expenseButton" layoutX="313.0" layoutY="27.0" mnemonicParsing="false" onAction="#expenseButtonOnAction" text="EXPENSE" />
+      <Label layoutX="408.0" layoutY="330.0" text="REPORT" textFill="#a892ff">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Button fx:id="switchToReportBtn" layoutX="445.0" layoutY="353.0" mnemonicParsing="false" onAction="#switchToReport" prefHeight="25.0" prefWidth="55.0" />
    </children>
 </AnchorPane>

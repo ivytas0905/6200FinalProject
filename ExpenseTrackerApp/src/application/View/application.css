@@ -35,6 +35,12 @@
 	-fx-background-insets: 0;
 }
 
+#switchToReportBtn{
+	-fx-background-image : url("../../images/SwitchPageBtn2.jpg");
+	-fx-background-size : 100% 100%;
+	-fx-background-insets: 0;
+}
+
 #removeButton{
 	-fx-background-color: transparent;
 }
@@ -63,7 +69,8 @@
 	-fx-background-insets: 0;
 }
 
-#expenseDataField,
-#incomeDataField{
-	
+/* Report Page */
+#reportPage{
+	-fx-background-image : url("../../images/ReportBackground.jpg");
+	-fx-background-size : 100% 100%;
 }
