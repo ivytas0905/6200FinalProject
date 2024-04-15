@@ -56,10 +56,14 @@ public String getDescription() {
 @Override
 public double getAmount() {
 	// TODO Auto-generated method stub
-	return 0;
+	return amount;
 }
-
-
+public void setAmount(double amount) {
+	this.amount = amount;
+}
+public int getExpenseId() {
+	return expenseId;
+}
 
 
 }

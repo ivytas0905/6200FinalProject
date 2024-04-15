@@ -2,7 +2,7 @@ package model;
 
 import java.util.Date;
 
-public class Lialibility extends Expense {
+public class Lialibility extends Transaction {
      double mortgageTotal;
      double rate;//year
      int term;
@@ -10,7 +10,7 @@ public class Lialibility extends Expense {
      
      
      public Lialibility(double amount, Date date, String description,double mt) {
-    	 super(amount, userId, mt, date, description);
+    	 super(amount, date, description);
     	 mortgageTotal = mt;
     	 this.rate = rate;
     	 this.term = term;
@@ -36,5 +36,15 @@ public class Lialibility extends Expense {
         return monthlyTotalPayment;
     			 
      }
+@Override
+public double getAmount() {
+	// TODO Auto-generated method stub
+	return mortgageTotal;
+}
+@Override
+public String getDescription() {
+	// TODO Auto-generated method stub
+	return "mortgage";
+}
     
 }

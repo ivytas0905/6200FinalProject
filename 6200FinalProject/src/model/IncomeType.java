@@ -12,6 +12,7 @@ public class IncomeType {
     	 typeNamelist.add("Salary");
     	 typeNamelist.add("Freelance");
     	 typeNamelist.add("Investment");
+    	 typeNamelist.add("Gift");
      }
      
      public String getIncomeType() {

@@ -1,7 +1,10 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Record {
 	//Expense expenseId;
@@ -52,32 +55,92 @@ public class Record {
     	return e;
     		
     }
+    public Income addNewIncome(int incomeId, UserProfile userId,double amount, Date date,String description,IncomeType typeName) {
+    	 Income i = new Income(incomeId, amount, date, description,typeName);
+    	 incomelist.add(i);
+    	 return i;
+    }
+    
     public void deleteExpense(int expenseId, UserProfile userId,double amount, Date date,String description) {
     	Expense e = new Expense(expenseId, userId,amount, date, description);
     	expenselist.remove(e);
     }
-//    public void generateOrderReport(ArrayList<Order> orders){
-//        ArrayList<Order> orderlist = orders;
-//        OrderSummary ordersummary ;
-//        
-//        OrderSummaryComparator comparator = new OrderSummaryComparator();
-//        
-//        for(Order order: orderlist){
-//            ordersummary = new OrderSummary(order);
-//            ordersummarylist.add(ordersummary);
-//        }
-//        Collections.sort(ordersummarylist, comparator);
-//    }
+    
+    public void deleteIncome(int incomeId, UserProfile userId,double amount, Date date,String description, IncomeType typeName) {
+    	Income e = new Income(incomeId, amount, date, description, typeName);
+    	expenselist.remove(e);
+    }
+    
+    
+    public boolean modifyExpenseAmount(int expenseId,double newAmount) {
+    	for (Expense e: expenselist) {
+    		if(e.getExpenseId()==expenseId) {
+    			return true;
+    		}
+    	}
+        return false;
+    }
+    
+    public boolean modifyIncomeAmount(int incomeId,double newAmount) {
+    	for(Income i: incomelist) {
+    		if(i.getIncomeId() == incomeId) {
+    			return true;
+    		}
+    	}
+        return false;
+    }
+    public List<Expense> searchExpenses(Integer expenseId, Date date,Double amount,String description){
+    
+    	return expenselist.stream()
+    			.filter(e ->(expenseId == null ||e.getExpenseId() == expenseId)
+    			&&(date == null || e.getDate().equals(date))
+    			&&(amount == null || e.getAmount()== amount)
+                &&(description == null || e.getDescription().contains(description)))
+    			.collect(Collectors.toList());
+    
+    
+    }
+    public List<Income> searchIncomes(Integer incomeId, Date date,Double amount,String description){
+   
+    	return incomelist.stream()
+    			.filter(e ->(incomeId== null ||e.getIncomeId() == incomeId)
+    			&&(date == null || e.getDate().equals(date))
+    			&&(amount == null || e.getAmount()== amount)
+                &&(description == null || e.getDescription().contains(description)))
+    			.collect(Collectors.toList());
+    
+    
+    }
+    
     
     public void generateExpenseReport(ArrayList<Expense> expenses) {
     	ArrayList<Expense> expenselist = expenses;
     	ExpenseComparator comparator = new ExpenseComparator();
+    	Collections.sort(expenselist, comparator);
+    	System.out.println("Expense Report:");
+    	System.out.println("---------------");
     	
+    	double totalExpense = 0;
     	for(Expense e: expenselist) {
-    		
+    		totalExpense += e.getAmount();
     	}
-    
+        System.out.printf("Total expense: %.2f%n", totalExpense);
     }
+    
+    public void generateIncomeReport(ArrayList<Income> incomes) {
+    	ArrayList<Income> incomelist = incomes;
+    	IncomeComparator comparator = new IncomeComparator();
+    	Collections.sort(incomelist, comparator);
+    	System.out.println("Income Report:");
+    	System.out.println("---------------");
+    	
+    	double totalIncome = 0;
+    	for(Income i: incomelist) {
+    		totalIncome += i.getAmount();
+    	}
+    	System.out.printf("Total expense: %.2f%n", totalIncome);
+    }
+    
     public double calculateBalance(UserProfile userId, String un, String pw,Date startingOfMonth, Date endingOfMonth) {
         UserProfile up = new UserProfile(un,pw);
         boolean isValid = up.isValidUser("username", "password");

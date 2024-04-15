@@ -35,7 +35,13 @@ public class Income extends Transaction{
 		// TODO Auto-generated method stub
 		return super.description;
 	}
-    
-    
-
+    public void setAmount(double amount) {
+    	this.amount = amount;
+    }
+    public int getIncomeId() {
+    	return incomeId;
+    }
+    public void setIncomeId(int newIncomeId) {
+    	this.incomeId = newIncomeId;
+    }
 }
