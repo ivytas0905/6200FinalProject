@@ -83,3 +83,4 @@ Adam,Accommodation,82,2024-03-28,MBTA
 Adam,Transportation,172,2024-09-13,Bus
 Adam,Accommodation,81,2024-10-13,MCD
 Adam,Food,18,2024-08-11,trash
+Adam,Food,6.49,2024-04-15,sandwich

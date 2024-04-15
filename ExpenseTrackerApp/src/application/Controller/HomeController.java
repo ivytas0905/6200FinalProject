@@ -128,6 +128,60 @@ public class HomeController implements Initializable{
 		}
 	}
 	
+	public void switchToRemove(ActionEvent event) throws Exception{
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("../View/Remove.fxml"));
+			Parent root = loader.load();
+			
+			RemoveController removeController = loader.getController();
+			removeController.displayInfo(currentUserLabel.getText());
+			
+			Stage stage = (Stage) switchToAddBtn.getScene().getWindow();
+			Scene scene = new Scene(root);
+			scene.getStylesheets().add(getClass().getResource("../View/application.css").toExternalForm());
+			stage.setScene(scene);
+			stage.show();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void switchToModify(ActionEvent event) throws Exception{
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("../View/Modify.fxml"));
+			Parent root = loader.load();
+			
+			ModifyController modifyController = loader.getController();
+			modifyController.displayInfo(currentUserLabel.getText());
+			
+			Stage stage = (Stage) switchToAddBtn.getScene().getWindow();
+			Scene scene = new Scene(root);
+			scene.getStylesheets().add(getClass().getResource("../View/application.css").toExternalForm());
+			stage.setScene(scene);
+			stage.show();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void switchToSetting(ActionEvent event) throws Exception{
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("../View/Setting.fxml"));
+			Parent root = loader.load();
+			
+			SettingController settingController = loader.getController();
+			settingController.displayInfo(currentUserLabel.getText());
+			
+			Stage stage = (Stage) switchToAddBtn.getScene().getWindow();
+			Scene scene = new Scene(root);
+			scene.getStylesheets().add(getClass().getResource("../View/application.css").toExternalForm());
+			stage.setScene(scene);
+			stage.show();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
 	public void switchToReport(ActionEvent event) throws Exception{
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("../View/Report.fxml"));

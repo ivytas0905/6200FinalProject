@@ -29,14 +29,14 @@
 
 #switchToAddBtn,
 #switchToModifyBtn,
-#switchToSettingBtn,
-#switchToRemoveBtn{
+#switchToRemoveBtn,
+#switchToReportBtn{
 	-fx-background-image : url("../../images/SwitchPageBtn.jpg");
 	-fx-background-size : 100% 100%;
 	-fx-background-insets: 0;
 }
 
-#switchToReportBtn{
+#switchToSettingBtn{
 	-fx-background-image : url("../../images/SwitchPageBtn2.jpg");
 	-fx-background-size : 100% 100%;
 	-fx-background-insets: 0;
@@ -64,6 +64,19 @@
 	-fx-background-image : url("../../images/CancelButton.jpg");
 	-fx-background-size : 100% 100%;
 	-fx-background-insets: 0;
+}
+
+/* Remove Page */
+#removePage{
+	-fx-background-image : url("../../images/AddBackground.jpg");
+	-fx-background-size : 100% 100%;
+}
+
+/* modify Page */
+#modifyPage,
+#settingPage{
+	-fx-background-image : url("../../images/HomeBackground.jpg");
+	-fx-background-size : 100% 100%;
 }
 
 /* Report Page */
