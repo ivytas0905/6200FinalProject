@@ -33,8 +33,6 @@ public class SignupController {
 	@FXML
 	private Button signupConfirmBtn;
 	
-	private SignupModel signModel = new SignupModel();
-	
 	public void signupButtonOnAction(ActionEvent event) throws IOException{
 		if (firstNameField.getText().isBlank() == false && //Check if the field is blank
 			lastNameField.getText().isBlank() == false &&
@@ -47,14 +45,12 @@ public class SignupController {
 			String password = passwordField.getText();
 			
 			//Check id the user name is unique
-			boolean isUsernameUnique = signModel.isUsernameUnique(username);
+			boolean isUsernameUnique = SignupModel.isUsernameUnique(username);
 			
 			if(isUsernameUnique) {
-				boolean success = signModel.createUser(firstName, lastName, username, password);
+				SignupModel.createUser(firstName, lastName, username, password);
 				
-				if(success) {
-					signupMessage.setText("Account created successfully");
-				}
+				signupMessage.setText("Account created successfully");
 			} else {
 				signupMessage.setText("Username has already exist");
 			}

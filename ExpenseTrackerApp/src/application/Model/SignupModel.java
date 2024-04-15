@@ -8,20 +8,22 @@ import java.io.IOException;
 
 public class SignupModel {
 	private static final String USER_ACCOUNTS_FILE = "user.txt";
+	
+	public static void createUser(String firstname, String lastname, String username, String password) {
+		User user = new User(firstname, lastname, username, password);
+		
+		try (BufferedWriter writer = new BufferedWriter(new FileWriter(USER_ACCOUNTS_FILE, true))){
+			String userInfo = user.toString();
+			writer.write(userInfo);
+			writer.newLine();
+			
+			System.out.println("User Added");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
-    public boolean createUser(String firstName, String lastName, String username, String password) {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(USER_ACCOUNTS_FILE, true))) {
-            String userAccountInfo = String.format("%s,%s,%s,%s", firstName, lastName, username, password);
-            writer.write(userAccountInfo);
-            writer.newLine(); //change to next line to write the new data
-            return true;
-        } catch (IOException e) {
-            e.printStackTrace();
-            return false;
-        }
-    }
-
-    public boolean isUsernameUnique(String username) {
+    public static boolean isUsernameUnique(String username) {
         try (BufferedReader reader = new BufferedReader(new FileReader(USER_ACCOUNTS_FILE))) {
             String line;
             while ((line = reader.readLine()) != null) {

@@ -10,3 +10,53 @@ Adam,Interest,50,2024-03-03,Saving Account
 Adam,Investment,50.6,2024-04-14,Fund
 Adam,Interest,20.0,2024-04-08,Bank
 Adam,Other,1000.0,2024-04-10,My mom gave me
+Adam,Interest,2119,2024-05-23,Amazon
+Adam,Interest,221,2024-08-29,Amazon
+Adam,Salary,1454,2024-12-03,Dividends
+Adam,Other,2563,2024-01-25,Amazon
+Adam,Investment,1757,2024-01-11,Fund
+Adam,Salary,407,2024-09-04,Amazon
+Adam,Salary,920,2024-05-28,Dividends
+Adam,Interest,661,2024-08-22,Fund
+Adam,Other,125,2024-09-20,Rental
+Adam,Other,2760,2024-05-19,Amazon
+Adam,Interest,781,2024-06-29,NEU
+Adam,Interest,2475,2024-06-27,Bank
+Adam,Interest,1577,2024-12-23,Rental
+Adam,Other,637,2024-10-31,Dividends
+Adam,Salary,684,2024-01-30,Bank
+Adam,Other,2969,2024-10-23,Fund
+Adam,Interest,361,2024-07-11,Amazon
+Adam,Interest,100,2024-08-16,Fund
+Adam,Other,2527,2024-11-29,Fund
+Adam,Interest,2771,2024-04-18,Saving Account
+Adam,Investment,1925,2024-01-29,Dividends
+Adam,Salary,636,2024-10-13,Fund
+Adam,Investment,1056,2024-05-02,Fund
+Adam,Investment,918,2024-03-19,Amazon
+Adam,Salary,2264,2024-04-12,Dividends
+Adam,Other,209,2024-05-29,Amazon
+Adam,Other,1282,2024-04-23,Saving Account
+Adam,Salary,2681,2024-05-20,NEU
+Adam,Salary,2017,2024-02-14,Rental
+Adam,Interest,988,2024-12-24,Fund
+Adam,Interest,114,2024-04-11,Saving Account
+Adam,Other,203,2024-01-14,Stock
+Adam,Other,660,2024-03-13,Amazon
+Adam,Other,1441,2024-04-04,Bank
+Adam,Investment,1612,2024-10-11,Stock
+Adam,Interest,2908,2024-12-18,Saving Account
+Adam,Interest,527,2024-05-28,NEU
+Adam,Salary,2728,2024-12-28,Rental
+Adam,Interest,2380,2024-05-09,NEU
+Adam,Salary,2367,2024-05-23,Dividends
+Adam,Interest,1269,2024-08-27,Amazon
+Adam,Investment,1823,2024-09-11,Stock
+Adam,Salary,688,2024-12-22,Saving Account
+Adam,Interest,1323,2024-06-09,Rental
+Adam,Investment,1640,2024-06-30,Dividends
+Adam,Salary,1661,2024-07-05,Fund
+Adam,Other,1870,2024-08-22,Dividends
+Adam,Other,1669,2024-04-18,Dividends
+Adam,Interest,1524,2024-05-04,NEU
+Adam,Other,2878,2024-06-25,Fund

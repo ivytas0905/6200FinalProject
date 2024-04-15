@@ -29,7 +29,8 @@
 
 #switchToAddBtn,
 #switchToModifyBtn,
-#switchToSettingBtn{
+#switchToSettingBtn,
+#switchToRemoveBtn{
 	-fx-background-image : url("../../images/SwitchPageBtn.jpg");
 	-fx-background-size : 100% 100%;
 	-fx-background-insets: 0;
@@ -39,10 +40,6 @@
 	-fx-background-image : url("../../images/SwitchPageBtn2.jpg");
 	-fx-background-size : 100% 100%;
 	-fx-background-insets: 0;
-}
-
-#removeButton{
-	-fx-background-color: transparent;
 }
 
 #logoutButton{
